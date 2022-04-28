@@ -168,14 +168,14 @@ Download SDL2 from: https://www.libsdl.org/download-2.0.php
 
 **Linux**
 ```
-ls /usr/lib/gcc/x86_64-linux-gnu/9/include/
-ls /usr/include/SDL2/
+ls /usr/include
+ls /usr/include/SDL2
 ```
 
 **MacOS**
 ```
 ls /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
-ls /usr/local/include/SDL2/
+ls /usr/local/include/SDL2
 ```
 
 **Windows**
