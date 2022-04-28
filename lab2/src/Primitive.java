@@ -16,6 +16,10 @@ public class Primitive {
            var cDouble = allocator.allocate(C_DOUBLE, Math.PI);
            var msgStr = allocator.allocateUtf8String("A slice of %f \n");
            printf(msgStr, cDouble.get(C_DOUBLE, 0));
+
+           // Change the cDouble to Math.PI * 4
+
+           // Output the string and the new value changed.
        }
     }
 }

@@ -21,7 +21,7 @@ public class HelloWorld {
 
            // converting a C string (MemorySegment) into a Java String
            String jString = cString.getUtf8String(0);
-           System.out.println(jString);
+           System.out.println("(Java) " + jString);
            // Hello World! Panama style
        }
     }

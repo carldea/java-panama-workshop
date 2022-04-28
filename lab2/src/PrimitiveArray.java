@@ -20,6 +20,8 @@ public class PrimitiveArray {
                    5.0, 6.0, 7.0, 8.0
            });
 
+           // double each value in C array
+
            for (long i = 0; i < 16; i++) {
                if (i>0 && i % 4 == 0) {
                    System.out.println();
@@ -27,6 +29,7 @@ public class PrimitiveArray {
                System.out.printf(" %f ", cDoubleArray.getAtIndex(C_DOUBLE, i ));
            }
            System.out.println();
+
        }
     }
 }
