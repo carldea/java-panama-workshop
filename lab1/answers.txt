@@ -6,8 +6,8 @@
 # Generate class files
 jextract -d classes \
   -t org.unix \
-  -I /usr/lib/gcc/x86_64-linux-gnu/9/include \
-  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdio.h
+  -I /usr/include \
+  /usr/include/stdio.h
 
 # MacOS
 # Generate class files
@@ -31,8 +31,8 @@ jextract -d classes \
 jextract --source \
   -d generated/src \
   -t org.unix \
-  -I /usr/lib/gcc/x86_64-linux-gnu/9/include \
-  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdio.h
+  -I /usr/include \
+  /usr/include/stdio.h
 
 # MacOS
 # Generate Java source code
