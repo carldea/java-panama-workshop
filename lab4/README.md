@@ -8,20 +8,21 @@ To begin let's build and compile the native library and Java code.
 
 Compile the mylib.c into a dynamic library
 ```shell
-$ bash compile_mylib.c.sh
+bash clean.sh
+bash compile_mylib.c.sh
 ```
 Jextract foo.h 
 ```shell
-$ bash jextract_foo.h.sh
+bash jextract_foo.h.sh
 ```
 Compile PanamaCallback.java 
 ```shell
-$ bash compile_PanamaCallback.java.sh
+bash compile_PanamaCallback.java.sh
 ```
 
 Run PanamaCallback example
 ```shell
-$ bash run_PanamaCallback.java.sh
+bash run_PanamaCallback.java.sh
 ```
 Output shows the following:
 

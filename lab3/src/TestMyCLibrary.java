@@ -18,20 +18,13 @@ public class TestMyCLibrary {
 
         // Exercise 1: Call the native C function: void addNumbers(int a, int b, int *c)
         // Expected output: Java 5 + 10 = 15
-        var x = 5;
-        var y = 10;
-        var result = allocator.allocate(C_INT, 0);
-        addNumbers(x, y, result);
-        printf(allocator.allocateUtf8String("  Java %d + %d = %d \n"), x, y, result.get(C_INT, 0));
+
 
         // Exercise 2: Call the native C function: void display(struct person p);
         // Expected output:
         // Name: Dr X
         // Age: 230
-        MemorySegment p = person.allocate(scope);
-        person.name$set(p, allocator.allocateUtf8String("Dr. X").address());
-        person.age$set(p, 230);
-        display(p);
+
 
         // Exercise 3: Call the native C function: void displayAll(struct person *ptrArray, int size);
         // The objective is to create an array of structs to be passed to displayAll with the size of the array.

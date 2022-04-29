@@ -6,6 +6,7 @@ This lab is primarily to have fun with a cross platform library that game develo
 
 First generate Panama code before running the example Java apps with the following:
 ```shell
+bash clean.sh
 bash jextract_sdlfoo.h.sh
 ```
 Now, run the example:
