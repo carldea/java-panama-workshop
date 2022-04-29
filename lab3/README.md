@@ -25,12 +25,29 @@ clean_windows.cmd
 ```
 
 Assuming you have your JAVA_HOME, you may run the commands below:
+
+Linux
 ```shell
 cd lab3
 bash clean.sh
-bash compile_myclibrary.c.sh
-bash jextract_myclibrary.h.sh
+bash compile_myclibrary.c_linux.sh
+bash jextract_linux.sh
 ```
+MacOS
+```shell
+cd lab3
+bash clean.sh
+bash compile_myclibrary.c_macos.sh
+bash jextract_macos.sh
+```
+Windows
+```shell
+cd lab3
+clean.cmd
+compile_myclibrary.c_windows.cmd
+bash jextract_windows.cmd
+```
+
 Above, you changed directory to lab3, cleaned up old files, compile and build custom library, and run jextract to generate classes and source code.
 
 

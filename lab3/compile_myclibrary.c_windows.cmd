@@ -1,0 +1,1 @@
+gcc -shared -o myclibrary.dll myclibrary.c
