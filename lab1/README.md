@@ -74,3 +74,24 @@ Hello World! Panama style
 ## Exercise 4: (Optional) Setup your IDE
 Set Java compiler to point to use Panama’s JDK
 Compiler JVM options (`--add-modules jdk.incubator.foreign`)
+
+
+## Excercise 4: (Optional) Compile and Run helloworld.c
+Do the following:
+```shell
+gcc helloworld.c
+```
+outputs:
+
+```shell
+a.out
+
+#Windows
+a.out.exe
+```
+
+To run
+```shell
+./a.out
+
+```

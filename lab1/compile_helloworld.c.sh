@@ -1,1 +1,1 @@
-clang helloworld.c
+gcc helloworld.c
