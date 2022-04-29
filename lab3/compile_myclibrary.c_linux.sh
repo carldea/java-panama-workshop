@@ -1,2 +1,2 @@
 # Below is for Linux
-gcc -shared -o myclibrary.so myclibrary.c
+gcc -shared -o libmyclibrary.so myclibrary.c
