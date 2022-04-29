@@ -163,25 +163,54 @@ sudo apt install freeglut3-dev libsdl2-dev
 **Windows**
 
 Download SDL2 from: https://www.libsdl.org/download-2.0.php
+After file is downloaded expand and move directory to your root C:\ directory.
+
+Place in C:\ directory. It should look like `C:\SDL2`.
 
 **Step 2:** Note the location of the include and lib directories for later use when specifying the `java.library.path`.
 
 **Linux**
+
+Include directories: C_INCLUDE_PATH and SDL2.
 ```
-ls /usr/include
-ls /usr/include/SDL2
+/usr/include
+/usr/include/SDL2
+```
+
+The installed libraries should exist in the following directories:
+```shell
+/usr/lib
+/usr/lib/x86_64-linux-gnu
 ```
 
 **MacOS**
+Include directories: C_INCLUDE_PATH and SDL2.
 ```
-ls /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
-ls /usr/local/include/SDL2
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+/usr/local/include/SDL2
+```
+
+The actually libraries should exist in the following directory:
+
+```shell
+/usr/local/lib
 ```
 
 **Windows**
+Please verify the following. Some locations are different depending on where things are installed. Any lab assignments with cmd shell scripts modification maybe needed.
+
+Include directories: C_INCLUDE_PATH and SDL2.
 ```
-TBD
+C:\MinGW\include
+C:\SDL2\include
 ```
+
+The actually libraries should exist in the following directory:
+```shell
+C:\MinGW\lib
+C:\SDL2\lib
+```
+
 
 # Finished Setting up Dev Environment
 
