@@ -4,13 +4,25 @@ The objective of this lab is to access a library we created locally called mycli
 > Note: Please don't be alarmed by the number of files that you see in the directory. Many of these files are there for your reference when working on the lab examples. All coding exercises exist in TestMyCLibrary.java.
 
 The `myclibrary` can be created if you have gcc compiler setup.
-After learning about C Pointers, Structs and Array of Structs you will be making calls to the library based on you knowledge so far.
+After learning about C Pointers, Structs and Array of Structs you will be making calls to the library based on your knowledge so far.
 - `myclibrary.h` - The header file containing the functions you will be calling.
   - `display(struct person p)`
   - `displayAll(struct person *ptrArray, int size)`
   - `addNumbers(int a, int b, int *c)`
   - `struct person`
 - myclibrary.c - The implementation of the functions above
+
+Before you begin change directory to lab2 and run the following scripts to clean up:
+
+Linux and MacOS
+```shell
+bash clean.sh
+```
+
+Windows
+```shell
+clean_windows.cmd
+```
 
 Assuming you have your JAVA_HOME, you may run the commands below:
 ```shell
