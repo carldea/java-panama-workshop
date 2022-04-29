@@ -22,6 +22,7 @@ public class PrimitiveArray {
 
            // double each value in C array
 
+
            for (long i = 0; i < 16; i++) {
                if (i>0 && i % 4 == 0) {
                    System.out.println();
