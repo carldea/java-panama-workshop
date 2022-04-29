@@ -4,31 +4,25 @@ This lab is primarily to have fun with a cross platform library that game develo
 - Cube - A color gradient cube rotating.
 - Prism - A 3d Prism object rotating on its base.
 
-First generate Panama code before running the example Java apps with the following:
+Similar to Lab 4 lets build and run the apps before we do the exercise. Here are the following commands to build and run:
+
+Linux
 ```shell
-bash clean.sh
-bash jextract_sdlfoo.h.sh
+bash jextract_linux.sh
+bash run_SDLCube.java_linux.sh
 ```
-Now, run the example:
+MacOS
 ```shell
-bash run_SDLCube.java.sh
+bash jextract_macos.sh
+bash run_SDLCube.java_macos.sh
 ```
-or
+
+Windows
 ```shell
-bash run_SDLPrism.java.sh
+bash jextract_windows.cmd
+bash run_SDLCube.java_windows.cmd
 ```
-To run it manually do the following:
-```shell
-# MacOS java.library.path
-export sdl_path=/usr/local/lib
-java \
-  -Djava.library.path=$sdl_path \
-  -cp classes \
-  -XstartOnFirstThread \
-  --enable-native-access=ALL-UNNAMED \
-  --add-modules=jdk.incubator.foreign \
-  src/SDLCube.java
-```
+
 
 To exit the application by clicking the close button or press the 'Q' key on the keyboard to quit.
 

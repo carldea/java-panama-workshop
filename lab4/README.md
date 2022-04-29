@@ -55,7 +55,8 @@ Output shows the following:
 [C]   Now invoking Java's doubleMe(int) static method.
 ```
 
-So, the Java code below doubleMe() output isn't begin displayed. The bug is inside the native library in the function callback named `my_callback_function2()`.  
+So, the Java code below doubleMe() output isn't begin displayed. The bug is inside the native library in the function callback named `my_callback_function2()`. This function is in the file `mylib.c`.
+
 ```java
     public static void doubleMe(int value) {
         MemorySegment cString = implicitAllocator()

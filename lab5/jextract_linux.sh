@@ -18,7 +18,7 @@ jextract --source -d src -t sdl2 \
     sdlfoo.h
 
 # add to classes (IMPORTANT: Notice namespace ..src/sdl2/..)
-javac --add-modules=jdk.incubator.foreign -d classes generated/src/sdl2/*.java
+javac --add-modules=jdk.incubator.foreign -d classes src/sdl2/*.java
 
 jextract --source -d src -t org.unix \
   -I $C_INCLUDE \
