@@ -1,11 +1,11 @@
 import jdk.incubator.foreign.*;
-import org.unix.foo_h;
+import org.unix.mylib_h;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 import static jdk.incubator.foreign.ResourceScope.newConfinedScope;
 import static jdk.incubator.foreign.SegmentAllocator.implicitAllocator;
-import static org.unix.foo_h.*;
+import static org.unix.mylib_h.*;
 
 public class PanamaCallback {
 
@@ -15,7 +15,7 @@ public class PanamaCallback {
     public static void callMePlease() {
         MemorySegment cString = implicitAllocator()
                 .allocateUtf8String("[JAVA] Inside callMePlease() method - I'm being called from C.\n");
-        foo_h.printf(cString);
+        printf(cString);
     }
 
     /**
@@ -25,7 +25,7 @@ public class PanamaCallback {
     public static void doubleMe(int value) {
         MemorySegment cString = implicitAllocator()
                 .allocateUtf8String("[JAVA] Inside doubleMe() method, %d times 2 = %d.\n".formatted(value, value*2));
-        foo_h.printf(cString);
+        printf(cString);
     }
 
     /**
@@ -67,7 +67,7 @@ public class PanamaCallback {
 
             // Invoke C function receiving a callback
             // void my_callback_function2(void (*ptr)(int))
-            foo_h.my_callback_function2(doubleMeNativeSymbol);
+            my_callback_function2(doubleMeNativeSymbol);
         }
     }
 }
