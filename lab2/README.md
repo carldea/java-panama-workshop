@@ -14,7 +14,7 @@ The following are the exercises for Lab 2:
 - Exercise 2 - Change values in C arrays
 
 ## Exercise 1 - Changing values in C primitives
-The objective is to add code to change tthe value inside the MemorySegment to the a new value and outputting a string.
+The objective is to add code to change the value inside a MemorySegment to the a new value and outputting a string.
 
 First lets run the Java file Primitive.java with the following:
 ```shell
@@ -32,7 +32,7 @@ In the code the variable (`MemorySegment`)
 ```java
 var cDouble = allocator.allocate(C_DOUBLE, Math.PI);
 ```
-Change value to `Math.PI * 4`
+Change value to `Math.PI * 4` using the same `cDouble` MemorySegment
 
 Expected output:
 ```text
