@@ -5,7 +5,6 @@ export sdl_path=/usr/lib/x86_64-linux-gnu
 java \
   -Djava.library.path=$sdl_path \
   -cp classes \
-  -XstartOnFirstThread \
   --enable-native-access=ALL-UNNAMED \
   --add-modules=jdk.incubator.foreign \
   src/SDLCube.java
