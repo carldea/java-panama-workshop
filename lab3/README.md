@@ -1,5 +1,7 @@
 # Lab 3 Pointers, Structs and StructArrays
-The objective of this lab is to access a library we created locally called myclibrary.
+The objective of this lab is to access a library we created locally called myclibrary. The coding excercises will all be inside the file `TestMyCLibrary.java`
+
+> Note: Please don't be alarmed by the number of files that you see in the directory. Many of these files are there for your reference when working on the lab examples. All coding exercises exist in TestMyCLibrary.java.
 
 The `myclibrary` can be created if you have gcc compiler setup.
 After learning about C Pointers, Structs and Array of Structs you will be making calls to the library based on you knowledge so far.
