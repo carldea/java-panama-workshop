@@ -20,9 +20,10 @@ public class PrimitiveArray {
                    5.0, 6.0, 7.0, 8.0
            });
 
-           // double each value in C array
+           // double each value in C array [ADD CODE BELOW THIS LINE]
 
 
+           // Display array values
            for (long i = 0; i < 16; i++) {
                if (i>0 && i % 4 == 0) {
                    System.out.println();

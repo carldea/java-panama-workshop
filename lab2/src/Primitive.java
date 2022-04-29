@@ -15,11 +15,13 @@ public class Primitive {
            var allocator = implicitAllocator();
            var cDouble = allocator.allocate(C_DOUBLE, Math.PI);
            var msgStr = allocator.allocateUtf8String("A slice of %f \n");
-           printf(msgStr, cDouble.get(C_DOUBLE, 0));
+           printf (msgStr, cDouble.get(C_DOUBLE, 0));
 
-           // Change the cDouble to Math.PI * 4
+           // Change the cDouble to Math.PI * 4 [ADD CODE BELOW THIS LINE]
 
            // Output the string and the new value changed.
+           var msgStr2 = allocator.allocateUtf8String("New value is %f \n");
+           printf(msgStr2, cDouble.get(C_DOUBLE, 0));
        }
     }
 }

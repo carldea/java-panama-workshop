@@ -1,12 +1,36 @@
 ## Lab 2 Primitives and Arrays
-The objective of this lab is learn about MemorySegments with C primitives and arrays manipulated off of the Java heap.
+The objective of this lab is learn about `MemorySegments` with C primitives and arrays. The values in memory can be manipulated off of the Java heap.
+
+
+Before you begin change directory to lab2 and run the following scripts to clean up:
+
+Linux and MacOS
+```shell
+bash clean.sh
+```
+
+Windows
+```shell
+clean_windows.cmd
+```
 
 **Note:** Reminder to change directory into lab2:
 `cd lab2`
 
 Before doing the exercises run `jextract` against the stdio.h file the following:
+
+Linux
 ```
-bash jextract_stdio.h.sh
+bash jextract_linux.sh
+```
+
+MacOS
+```shell
+bash jextract_macos.sh
+```
+Windows
+```
+jextract_windows.cmd
 ```
 
 The following are the exercises for Lab 2:
@@ -17,37 +41,73 @@ The following are the exercises for Lab 2:
 The objective is to add code to change the value inside a MemorySegment to the a new value and outputting a string.
 
 First lets run the Java file Primitive.java with the following:
+
+Linux/MacOS
 ```shell
 java -cp classes \
 --enable-native-access=ALL-UNNAMED \
 --add-modules jdk.incubator.foreign \
 src/Primitive.java
 ```
+Windows
+```shell
+java -cp classes --enable-native-access=ALL-UNNAMED --add-modules jdk.incubator.foreign \
+src/Primitive.java
+```
 
 The output shows:
 ```text
-A slice of 3.141593
+A slice of 3.141593 
+New value is 3.141593 
 ```
-In the code the variable (`MemorySegment`)  
+
+Open the file Primitive.java and look at the line that appears like the following:
+```shell
+// Change the cDouble to Math.PI * 4 [ADD CODE BELOW THIS LINE]
+```
+
+In the code the variable cDouble of type`MemorySegment`  
+
 ```java
 var cDouble = allocator.allocate(C_DOUBLE, Math.PI);
 ```
-Change value to `Math.PI * 4` using the same `cDouble` MemorySegment
 
-Expected output:
+Change value to `Math.PI * 4` contents in `cDouble` 
+
+**Expected output:**
 ```text
 A slice of 3.141593
 New value is 12.566371
 ```
 ## Exercise 2 - Changing values in C arrays
 
-The objective is to add code to change the update the value inside the C array (MemorySegment) to the a new value and outputting the contents.
+The objective is to add code to update the value inside the C array (MemorySegment) to the a new value and outputting the contents.
 
-First lets run the Java file Primitive.java with the following:
+Open the file PrimitiveArray.java and locate the line as follows:
+```shell
+// double each value in C array [ADD CODE BELOW THIS LINE]
+```
+This is where you need to create a for loop to set the values into the C array of doubles (MemorySegment).
+```java
+for (long i = 0; i < 16; i++) {
+        // cDoubleArray...
+}
+```
+
+
+First lets run the Java file `Primitive.java` to see the current output with the following:
+
+Linux/MacOS
 ```shell
 java -cp classes \
 --enable-native-access=ALL-UNNAMED \
 --add-modules jdk.incubator.foreign \
+src/PrimitiveArray.java
+```
+
+Windows
+```shell
+java -cp classes --enable-native-access=ALL-UNNAMED --add-modules jdk.incubator.foreign \
 src/PrimitiveArray.java
 ```
 
@@ -67,7 +127,7 @@ MemorySegment cDoubleArray = ...
 
 Add code to iterate through the C array and set the value to (multiply by two).
 
-Expected output:
+**Expected output:**
 ```text
 An array of data
 2.000000  4.000000  6.000000  8.000000

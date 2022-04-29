@@ -4,14 +4,11 @@ rm -rf generated/src
 rm -rf src/org
 rm -rf src/sdl2
 
-## Please change environment variables if you are on Linux
-# MacOS
-export C_INCLUDE=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
-export SDL_INCLUDE=/usr/local/include/SDL2
+## Please change environment variables if libraries are installed else where
 
 # Linux
-# export C_INCLUDE=/usr/include
-# export SDL_INCLUDE=/usr/include/SDL2
+export C_INCLUDE=/usr/include
+export SDL_INCLUDE=/usr/include/SDL2
 
 jextract --source -d src -t sdl2 \
     -I $C_INCLUDE \

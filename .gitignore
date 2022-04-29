@@ -12,3 +12,10 @@ a.out
 *.dll
 hs_err_pid*.log
 out/
+lab1/src/org/**/*.java
+lab2/src/org/**/*.java
+lab3/src/org/**/*.java
+lab4/src/org/**/*.java
+lab5/src/org/**/*.java
+lab5/src/sdl2/**/*.java
+

@@ -9,10 +9,6 @@ rm -rf src/sdl2
 export C_INCLUDE=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
 export SDL_INCLUDE=/usr/local/include/SDL2
 
-# Linux
-# export C_INCLUDE=/usr/include
-# export SDL_INCLUDE=/usr/include/SDL2
-
 jextract --source -d src -t sdl2 \
     -I $C_INCLUDE \
     -I $SDL_INCLUDE \

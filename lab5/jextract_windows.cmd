@@ -1,11 +1,11 @@
-#!/bin/sh -x
-rm -rf classes
-rm -rf generated/src
-rm -rf src/org
-rm -rf src/sdl2
+@echo off
+set OLDPATH=%PATH%
 
-## Please change environment variables if you are on Linux
-# MacOS
+## Please change environment variables libraries are installed elsewhere
+set path=C:\devtools\MinGW\bin;%PATH%
+set LIBRARY_PATH=C:\devtools\MinGW\lib
+set C_INCLUDE_PATH=C:\devtools\MinGW\include
+
 export C_INCLUDE=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
 export SDL_INCLUDE=/usr/local/include/SDL2
 

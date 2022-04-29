@@ -1,69 +1,69 @@
-# Answers to Lab 1
+# Answers to Lab 1 Java Panama Hello World
+The objective is to generate Panama code using the jextract tool.
 ## Exercise 1 - Generate classes for stdio.h
 
+Generate class files:
+Set `C_INCLUDE_PATH` for the appropriate path for your OS
 ### Linux
-Generate class files
-```shell
-jextract -d classes \
-  -t org.unix \
-  -I /usr/include \
-  /usr/include/stdio.h
 ```
-
+export C_INCLUDE_PATH=/usr/include
+```
 ### MacOS
-Generate class files
 ```shell
-jextract -d classes \
-  -t org.unix \
-  -I /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h
+export C_INCLUDE_PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
 ```
 
 ### Windows
-Generate class files
+```shell
+@echo off
+set OLD_PATH=%PATH%
+set PATH=C:\devtools\MinGW\bin;%PATH%
+set LIBRARY_PATH=C:\devtools\MinGW\lib
+set C_INCLUDE_PATH=C:\devtools\MinGW\include
+```
+
+### Running jextract against stdio.h 
+
+Linux/MacOS
 ```shell
 jextract -d classes \
   -t org.unix \
-  -I (TBD) \
-  (TBD)\stdio.h
+  -I $C_INCLUDE_PATH \
+  $C_INCLUDE_PATH/stdio.h
+```
+
+Windows
+```shell
+jextract -d classes -t org.unix -I %C_INCLUDE_PATH%  %C_INCLUDE_PATH%\stdio.h
 ```
 
 ## Exercise 2 - Generate source code for stdio.h
 
-### Linux
-Generate Java source code
+Generate Java source code. The generated source goes into the src directory as `src/org/unix`. The `.gitignore` ignores those directories.
+### Running jextract against stdio.h 
+
+Linux / MacOS
 ```shell
-jextract --source \
-  -d generated/src \
+jextract -d src \
   -t org.unix \
-  -I /usr/include \
-  /usr/include/stdio.h
+  -I $C_INCLUDE_PATH \
+  $C_INCLUDE_PATH/stdio.h
 ```
 
-### MacOS
-Generate Java source code
+Windows
 ```shell
-jextract --source \
-  -d generated/src \
-  -t org.unix \
-  -I /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h
+jextract -d classes -t org.unix -I %C_INCLUDE_PATH%  %C_INCLUDE_PATH%\stdio.h
 ```
-
-### Windows
-Generate Java source code
-```shell
-jextract --source \
-  -d generated/src \
-  -t org.unix \
-  -I (TBD) \
-  (TBD)\stdio.h
-```
-
-## Exercise 3 - Execute the existing HelloWorld.java file
+## Exercise 3 - Execute HelloWorld.java
+Linux / MacOS
 ```shell
 java -cp classes \
  --enable-native-access=ALL-UNNAMED \
  --add-modules jdk.incubator.foreign \
  src/HelloWorld.java
+```
+
+Windows
+```shell
+java -cp classes --enable-native-access=ALL-UNNAMED --add-modules jdk.incubator.foreign src/HelloWorld.java
 ```
