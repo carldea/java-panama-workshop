@@ -45,6 +45,7 @@ Generate Java source code. The generated source goes into the src directory as `
 Linux / MacOS
 ```shell
 jextract -d src \
+  --source \
   -t org.unix \
   -I $C_INCLUDE_PATH \
   $C_INCLUDE_PATH/stdio.h
@@ -52,7 +53,7 @@ jextract -d src \
 
 Windows
 ```shell
-jextract -d classes -t org.unix -I %C_INCLUDE_PATH%  %C_INCLUDE_PATH%\stdio.h
+jextract -d src --source -t org.unix -I %C_INCLUDE_PATH%  %C_INCLUDE_PATH%\stdio.h
 ```
 ## Exercise 3 - Execute HelloWorld.java
 Linux / MacOS
