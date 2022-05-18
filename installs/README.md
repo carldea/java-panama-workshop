@@ -152,8 +152,13 @@ gcc --version
 Installing Brew:
 ```
 /bin/bash -c “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)”
+```
+
+Installing SDL2 library:
+```
 brew install sdl2
 ```
+Please read Step 2's section on MacOS. Here you'll be using 2.0.16's headers, after you've installed the latest version from `brew install sdl2` (version 2.0.22).
 
 **Linux**
 ```
@@ -184,30 +189,59 @@ The installed libraries should exist in the following directories:
 ```
 
 **MacOS**
-Include directories: C_INCLUDE_PATH and SDL2.
+ 
+To obtain Headers (include files directory for SDL2) and install:
+Go to download https://www.libsdl.org/release/SDL2-2.0.16.dmg
+Double click and drag or copy directory (SDL2.framework) folder
+
+Copy the `SDL2.framework` to `/Library/Frameworks`
+
+Or 
+
+**(Preferred way)**
+You may alternatively install it in `<Your home directory>/Library/Frameworks` directory.
+if your access privileges are not high enough. Validate the `SDL_INCLUDE_PATH` to ensure its pointing to the correct directory folder.
+
+An excerpt: `export SDL_INCLUDE_PATH=$HOME/Library/Frameworks/SDL2.framework/Headers` is located inside the `jextract_macos.sh`.
+
+Note: When using brew to install sdl2 it will install version 2.0.22 with its headers directory located at `/usr/local/Cellar/sdl2/2.0.22/include/SDL2` the jextract tool received an the following error:
+
+```shell
+  Invalid Cursor kind value: 602
 ```
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
-/usr/local/include/SDL2
+
+Assuming you've copied the `SDL2.framework` to `<Your home directory>/Library/Frameworks`. Since the `Library` folder is hidden use `Shift` + `Command` + `.` key combination in File Finder to show hidden folders.
+
+Include directories: C_INCLUDE_PATH and SDL_INCLUDE_PATH. 
+
+```
+export C_INCLUDE_PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+
+export SDL_INCLUDE_PATH=$HOME/Library/Frameworks/SDL2.framework/Headers
 ```
 
 The actually libraries should exist in the following directory:
 
 ```shell
-/usr/local/lib
+$HOME/Library/Frameworks/SDL2.framework/lib
 ```
+
+
 
 **Windows**
 Please verify the following. Some locations are different depending on where things are installed. Any lab assignments with cmd shell scripts modification maybe needed.
 
-Include directories: C_INCLUDE_PATH and SDL2.
+Include directories: C_INCLUDE_PATH and SDL_INCLUDE_PATH.
 ```
 C:\MinGW\include
+
 C:\SDL2\include
 ```
 
 The actually libraries should exist in the following directory:
 ```shell
 C:\MinGW\lib
+
 C:\SDL2\lib
 ```
 
