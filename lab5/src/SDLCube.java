@@ -24,16 +24,20 @@ import static sdl2.LibSDL2.*;
  *
  * Then extract the mapping from this file
  * <pre><code>
- * jextract --source -d src/main/java -t sdl2 \
- *     -I /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include \
- *     -I /usr/local/include/SDL2 -l SDL2 \
+ * jextract --source -d src -t sdl2 \
+ *     -I $C_INCLUDE_PATH \
+ *     -I $SDL_INCLUDE_PATH \
+ *     -l SDL2 \
  *     --header-class-name LibSDL2 \
- *     sdl-foo.h
+ *     sdlfoo.h
  * </code></pre>
  *
  * Finally run the existing code that uses the above mappings.
  * <pre><code>
- * env JAVA_LIBRARY_PATH=:/usr/local/lib java \
+ * export sdl_path=/usr/local/lib
+ *
+ * java \
+ *   -Djava.library.path=$sdl_path \
  *   -cp classes \
  *   -XstartOnFirstThread \
  *   --enable-native-access=ALL-UNNAMED \
