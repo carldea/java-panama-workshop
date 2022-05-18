@@ -158,7 +158,7 @@ Installing SDL2 library:
 ```
 brew install sdl2
 ```
-Please read Step 2's section on MacOS. Here you'll be using 2.0.16's headers, after you've installed the latest version from `brew install sdl2` (version 2.0.22).
+Please read Step 2's section on MacOS. Here you'll be using 2.0.18's headers, after you've installed the latest version from `brew install sdl2` (version 2.0.22).
 
 **Linux**
 ```
@@ -191,7 +191,7 @@ The installed libraries should exist in the following directories:
 **MacOS**
  
 To obtain Headers (include files directory for SDL2) and install:
-Go to download https://www.libsdl.org/release/SDL2-2.0.16.dmg
+Go to download https://www.libsdl.org/release/SDL2-2.0.18.dmg
 Double click and drag or copy directory (SDL2.framework) folder
 
 Copy the `SDL2.framework` to `/Library/Frameworks`
